@@ -26,3 +26,32 @@ const arr1 = [1, 2, 3];
 const arr2 = [1, 2, 3];
 const joined = arr1.concat(arr2);
 const joinedWithSpreat = [...arr1, ...arr2];
+
+// 4. Array Iteration
+
+for (let i = 0; i < numbers.length; i++) {
+  console.log(numbers[i]);
+}
+
+for (const num of numbers) {
+  console.log(num);
+}
+
+numbers.forEach((num, index) => {
+  console.log(`Number at: ${index} is ${num}`);
+});
+
+// Array transformation
+
+const doubled = numbers.map((num) => num * 2);
+const evenNumbers = numbers.filter((num) => num % 2 === 0);
+const sum = numbers.reduce((all, num) => all + num, 0);
+
+// Array checking
+
+const isArray = Array.isArray(numbers);
+const arrayLength = numbers.length;
+
+// Array sorting
+numbers.sort((a, b) => a - b);
+numbers.reverse();
