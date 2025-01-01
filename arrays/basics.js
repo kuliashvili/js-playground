@@ -55,3 +55,9 @@ const arrayLength = numbers.length;
 // Array sorting
 numbers.sort((a, b) => a - b);
 numbers.reverse();
+
+// Array search
+const found = numbers.find((num) => num > 3);
+const foundIndex = numbers.findIndex((num) => num > 3);
+const someNumbers = numbers.some((num) => num > 3);
+const allNumbers = numbers.every((num) => num > 3);
