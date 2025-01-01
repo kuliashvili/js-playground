@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "module": "ESNext",    // Ensure ES module compatibility
+    "target": "ESNext",    // Use the latest ECMAScript version
+    "moduleResolution": "node",
+    "esModuleInterop": true
+  }
+}
