@@ -64,3 +64,33 @@ product1.checkstock();
 product1.updatePrice(3);
 
 console.log(product1.sell(200));
+
+// Calculator class
+
+class Calculator {
+  add(a, b) {
+    return a + b;
+  }
+
+  substract(a, b) {
+    return a - b;
+  }
+
+  multiply(a, b) {
+    return a * b;
+  }
+
+  divide(a, b) {
+    if (b === 0) {
+      return "You cant devide number to 0";
+    } else {
+      return a / b;
+    }
+  }
+}
+
+//example usage
+
+let answer = new Calculator();
+
+console.log(answer.add(1, 6));
