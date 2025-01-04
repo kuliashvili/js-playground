@@ -18,3 +18,16 @@ function printCoordinates(x: number, y: number) {
 
 greetingUser(surname, usersAge, isVerified);
 printCoordinates(10, 29);
+
+let array1: number[] = [2, 7, 9];
+let array2: number[] = [5, 8, 3];
+
+function findDifference(arr1: number[], arr2: number[]) {
+  let firstVolume: number = arr1.reduce((sum, num) => sum * num, 1);
+  let secondVolume: number = arr2.reduce((sum, num) => sum * num, 1);
+  let answer = firstVolume - secondVolume;
+
+  return answer >= 0 ? answer : answer * -1;
+}
+
+console.log(findDifference(array1, array2));

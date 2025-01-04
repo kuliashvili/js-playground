@@ -13,3 +13,12 @@ function printCoordinates(x, y) {
 }
 greetingUser(surname, usersAge, isVerified);
 printCoordinates(10, 29);
+var array1 = [2, 7, 9];
+var array2 = [5, 8, 3];
+function findDifference(arr1, arr2) {
+    var firstVolume = arr1.reduce(function (sum, num) { return sum * num; }, 1);
+    var secondVolume = arr2.reduce(function (sum, num) { return sum * num; }, 1);
+    var answer = firstVolume - secondVolume;
+    return answer >= 0 ? answer : answer * -1;
+}
+console.log(findDifference(array1, array2));
