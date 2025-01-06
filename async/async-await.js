@@ -25,3 +25,43 @@ async function fetchUsers() {
     console.log(error);
   }
 }
+
+// sequential vs parallel execution (one after other and all at once)
+
+async function oneByOne() {
+  let data1 = await fetch("https://someapi.com/users");
+  let data2 = await fetch("https://someapi.com/cars");
+}
+
+async function allAtOnce() {
+  const [data1, data2] = await Promise.all([
+    fetch("https://someapi.com/users"),
+    fetch("https://someapi.com/cars"),
+  ]);
+}
+
+// errorhandling patterns
+
+async function handleErrors() {
+  try {
+    await doesSth();
+  } catch {
+    //handle error
+  } finally {
+    //always executes
+  }
+}
+
+// async with array map method
+
+async function getDataWithMap() {
+  const urls = ["apiexample/users", "apiexample/cars", "apiexample/swords"];
+
+  const results = await Promise.all(
+    urls.map(async (url) => {
+      const response = await fetch(url);
+      const data = response.json();
+      return data;
+    })
+  );
+}
