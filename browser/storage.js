@@ -26,3 +26,32 @@ const hasUserName = localStorage.getItem("name") !== null;
 const storedItemsCount = localStorage.length;
 
 // 2) Sessionstorage - clear when tab close / refresh
+
+//store data
+
+sessionStorage.setItem("task", "developing");
+sessionStorage.setItem("items", JSON.stringify([1, 3, 7, 9]));
+
+// get data
+
+const task = sessionStorage.getItem("task");
+const ourItems = JSON.parse(sessionStorage.getItem("items"));
+
+// remove item
+
+sessionStorage.remove("task");
+
+// clear all session data
+
+sessionStorage.clear();
+
+// 3) cookies - can set expiration date
+
+document.cookie = "username=giorgi";
+document.cookie = "language=en; max-age: 80";
+
+// set cookie with path
+document.cookie = "user=giorgi; path/users";
+
+//read all cookies
+const allCookies = document.cookie;
