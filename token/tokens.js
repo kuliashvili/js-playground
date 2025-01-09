@@ -16,3 +16,17 @@ const removeToken = () => {
   localStorage.removeItem("storeToken");
   localStorage.removeItem("storeToken");
 };
+
+// 2) token with date expiration
+
+const tokenWitDate = (token, hourse) => {
+  const now = new Date().getTime();
+  const expirationTime = now + hourse * 60 * 60 * 1000;
+
+  const tokenData = {
+    value: token,
+    expiry: expirationTime,
+  };
+
+  localStorage.setItem("someToken", JSON.stringify(tokenData));
+};
