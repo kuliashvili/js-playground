@@ -1,0 +1,54 @@
+# SQL Fundamentals
+
+1. Database and Table Management
+
+CREATE DATABASE database_name - Creates a new database
+USE database_name - Switches to specific database
+SHOW DATABASE - Lists all databases
+SHOW TABLES - Lists all tables in the current database
+DISCRIBE table_name or SHOW COLUMNS FROM table_name - Shows table structure
+CREATE TABLE table_name - Creates a new table
+INSERT INTO table_name (columns) VALUES (values) - Adds data to tables
+SELECT * FROM table_name - Retrieves all data from a table
+
+2. Creating Tables with proper structure (when creating tables, defining proper columns with data types is important)
+
+CREATE TABLE student (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  first_name VARCHAR(50) NOT NULL,
+  last_name VARCHAR(50) NOT NULL,
+  age INT,
+  enrollement_date DATE
+);
+
+Key concepts
+1) Data types: INT, VARCHAR, DATE...
+2) Constraints: PRIMARY_KEY, NOT NULL, UNIQUE...
+3) AUTO_INCREMENT for automatic ID generation
+
+3.Basic Query Operations
+
+-- select specific columns
+SELECT first_name, last_name FROM students;
+
+-- filter data
+SELECT * FROM students WHERE age > 18
+
+-- sort data
+SELECT * FROM students ORDER BY last_name ASC
+
+--Limit results
+SELECT * FROM students LIMIT 10
+
+4.Data Manipulation
+
+--update existing data
+UPDATE students SET age = 19 WHERE id = 1
+
+--delete data
+DELETE FROM students WHERE id = 5
+
+--Alter table structure
+ALTER TABLE students ADD email VARCHAR(100)
+
+
