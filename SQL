@@ -51,4 +51,42 @@ DELETE FROM students WHERE id = 5
 --Alter table structure
 ALTER TABLE students ADD email VARCHAR(100)
 
+5. Practical Exercise
+
+--create database
+CREATE DATABASE bookstore;
+USE bookstore;
+
+--create author table
+CREATE TABLE authors (
+  author_id INT PRIMARY KEY AUTO_INCREMENT,
+  name VARCHAR(100) NOT NULL,
+  country VARCHAR(50)
+);
+
+--create books table
+CREATE TABLE books (
+  book_id INT PRIMARY KEY AUTO_INCREMENT,
+  title VARCHAR(200) NOT NULL,
+  author_id INT,
+  publication_year INT,
+  price DECIMAL(10,2),
+  FOREIGN KEY (author_id) REFERENCES authors(author_id)
+);
+
+--insert sample data
+INSERT INTO authors (name, country)
+VALUES ('jon pork', 'Dagestan'),
+       ('random name', 'italy');
+
+INSERT INTO books (title, author_id, publication_year, price)
+VALUES ('random random', 1, 1998, 19.99),
+       ('random random', 2, 2005, 20.20);
+
+--retrive data with conditions
+SELECT books.title, authors.name FROM books
+JOIN authors ON books.author_id = authors.author_id
+WHERE publication_year > 1990;
+
+
 
