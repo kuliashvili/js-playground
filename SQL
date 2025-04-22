@@ -131,6 +131,23 @@ UPDATE books SET price = 25 WHERE book_id = 1; --update single column
 UPDATE author SET name = 'gio kuliashvili', fav_color = 'purple', fav_food = 'khinkali' WHERE author_id = 5; --multiple
 UPDATE books SET price = price * 1.1 WHERE publication_year > 2010; -- update with calculation
 
+14. SQL DELETE (remove data)
+DELETE FROM books WHERE book_id = 3; -- delete specific row
+DELETE FROM books WHERE price < 10 -- delete based on condition 
+DELETE FROM authors --delete all rows but keep table
+
+15. LIMIT 
+SELECT * FROM books LIMIT 5; --mySQL syntax
+SELECT TOP 5 * FROM books; -- SQL server syntax
+
+16. SQL Aggregate functions
+SELECT COUNT(*) FROM books; --count function
+SELECT COUNT(*) FROM books WHERE price IS NULL --count with condition
+SELECT SUM(price) FROM books --sum function
+SELECT AVG(price) FROM books; --avg price 
+SELECT MIN(publication_year) FROM books --min function
+SELECT MAX(price) FROM books --max function
+SELECT author_id, COUNT(*) AS book_count, AVG(price) AS average_price FROM books GROUP BY author_id
 
 
 
