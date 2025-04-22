@@ -88,5 +88,66 @@ SELECT books.title, authors.name FROM books
 JOIN authors ON books.author_id = authors.author_id
 WHERE publication_year > 1990;
 
+6. SQL SELECT statement
+SELECT * FROM students --Basic SELECT
+SELECT first_name, last_name FROM students; --select specific columns
+SELECT first_name, last_name, price * 0.9 AS discounted_price FROM books -- calculated columns
+
+7. SELECT DISTINCT
+SELECT DISTINCT country FROM authors; --unique countries of authors
+SELECT DISTINCT publication_year, price FROM books -- unique combination of values
+
+8. SQL WHERE clause (filtering data)
+SELECT * FROM students WHERE age > 18; --basic WHERE filtering
+SELECT * FROM books WHERE title = 'vefxistyaosani'; --filter by string
+SELECT * FROM students WHERE enrollment_date > '2025-01-01' -- date comparison
+
+9. SQL ORDER BY (sorting)
+SELECT * FROM books ORDER BY price --sort in ascending order (default) by price
+SELECT * FROM students ORDER BY age DESC; --sort in descending order
+SELECT * FROM books ODER BY publication_year DESC, price ASC --multiple column sort
+
+10.SQL AND, OR, NOT (logical operators)
+SELECT * FROM books WHERE price > 10 AND publication_year > 2000 --AND operator
+SELECT * FROM authors WHERE country = 'georgia' OR country = 'spain' --OR operator
+SELECT * FROM books WHERE NOT publication_year = 2005; --NOT operator
+SELECT * FROM books WHERE (publication_year > 2000 OR price > 15) AND title LIKE '%random%' --combining operators
+
+11. SQL INSERT INTO (adding data)
+INSERT INTO authors VALUES (3,'new author','georgia') --complete row insert
+INSERT INTO authors(name, country) VALUES('name', 'spain') --insert specific columns
+INSERT INTO books (title, author_id, publication_year, price)
+VALUES ('Book One', 1, 2010, 12.99),
+       ('Book Two', 1, 2015, 14.99),
+       ('Book Three', 2, 2020, 19.99);             -- multiple row at once insert
+
+12. SQL NULL values
+SELECT * FROM books WHERE price IS NULL; -- rows with null values
+SELECT * FROM authors WHERE country IS NOT NULL; -- rows without NULL values
+UPDATE books SET publication_year = NULL WHERE book_id = 1; --set a column to NULL
+
+13. SQL UPDATE ( Modifying data)
+UPDATE books SET price = 25 WHERE book_id = 1; --update single column
+UPDATE author SET name = 'gio kuliashvili', fav_color = 'purple', fav_food = 'khinkali' WHERE author_id = 5; --multiple
+UPDATE books SET price = price * 1.1 WHERE publication_year > 2010; -- update with calculation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
